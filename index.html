@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      body {
+          font-family: "Poppins", sans-serif;
+      }
+
+      .timeline-section {
+          background-color: #24292d;
+          min-height: 100vh;
+          padding: 100px 15px;
+      }
+      .timeline-items {
+          max-width: 1000px;
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+          position: relative;
+      }
+      .timeline-items::before {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 100%;
+          background-color: rgba(47, 54, 62, 1); /* Garis tetap cerah */
+      }
+      .timeline-item {
+          margin-bottom: 40px;
+          width: 100%;
+          position: relative;
+          padding-left: 50px; /* Jarak untuk konten */
+          text-align: left;
+      }
+      .timeline-dot {
+          height: 16px;
+          width: 16px;
+          background-color: rgba(234, 160, 35, 0.5); /* Warna dot redup */
+          position: absolute;
+          left: -8px; /* Dot di kiri */
+          border-radius: 50%;
+          top: 10px;
+          transition: background-color 0.3s ease; /* Transisi untuk warna dot */
+      }
+      .timeline-date {
+          font-size: 18px;
+          color: rgba(234, 160, 35, 0.5); /* Warna teks redup */
+          margin: 6px 0 15px;
+      }
+      .timeline-content {
+          background-color: #2f363e;
+          padding: 30px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk warna */
+      }
+      .timeline-content h3 {
+          font-size: 20px;
+          color: rgba(255, 255, 255, 0.5); /* Warna teks redup */
+          margin: 0 0 10px;
+          text-transform: capitalize;
+          font-weight: 500;
+      }
+      .timeline-content p {
+          color: rgba(200, 200, 200, 0.5); /* Warna teks redup */
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 22px;
+      }
+      .highlight {
+          background-color: #4e555d; /* Ganti dengan warna yang diinginkan */
+          color: #ffffff; /* Warna teks menyala */
+      }
+      /* responsive */
+      @media (max-width: 767px) {
+          .timeline-items::before {
+              left: 7px;
+          }
+          .timeline-dot {
+              left: 0;
+          }
+      }
+  </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark z-3 position-absolute w-100"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <img src="jfc.jpeg" alt="test" class="img-fluid" />
+    </header>
+
+    <h1 class="my-5 d-flex justify-content-center">Walk Through History</h1>
+
+    <section class="timeline-section">
+      <div class="timeline-items">
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">SEBELUM KOLONIAL</div>
+              <div class="timeline-content">
+                  <h3>Majapahit</h3>
+                  <p>
+                      Jember merupakan bagian dari Kerajaan Majapahit dan Kesultanan
+                      Mataram, dengan kehidupan masyarakat yang berfokus pada pertanian
+                      subsisten dan budaya lokal.
+                  </p>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">ABAD KE 18</div>
+              <div class="timeline-content">
+                  <h3>ERA VOC</h3>
+                  <p>
+                      VOC mulai mengeksplorasi Jember karena potensi agrarisnya.
+                      Interaksi dengan pedagang Eropa membawa pengaruh baru dalam
+                      ekonomi dan pertanian.
+                  </p>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">1859-1890</div>
+              <div class="timeline-content">
+                  <h3>Pertumbuhan Perkebunan</h3>
+                  <p>
+                      Sejak 1859, Jember dikenal sebagai daerah penghasil kopi, dengan
+                      Belanda membuka lahan perkebunan yang menarik banyak imigran untuk
+                      bekerja.
+                  </p>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">1890</div>
+              <div class="timeline-content">
+                  <h3>Pertumbuhan Tembakau</h3>
+                  <p>
+                      Pada tahun 1890, Jember menjadi daerah produksi utama tembakau,
+                      terutama jenis Besuki Na-Oogst, yang diekspor ke Eropa dan
+                      meningkatkan pendapatan daerah.
+                  </p>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">ABAD Ke-20</div>
+              <div class="timeline-content">
+                  <h3>Perkembangan Infrastruktur</h3>
+                  <p>
+                      Pembangunan infrastruktur seperti jalan dan rel kereta api dimulai
+                      untuk mendukung pertumbuhan ekonomi dan meningkatkan
+                      aksesibilitas.
+                  </p>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">1945-1949</div>
+              <div class="timeline-content">
+                  <h3>Perang Kemerdekaan</h3>
+                  <p>
+                      Jember menjadi pusat pertempuran antara pejuang kemerdekaan dan
+                      pasukan kolonial Belanda, berkontribusi pada perjuangan untuk
+                      kemerdekaan Indonesia.
+                  </p>
+              </div>
+          </div>
+          <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">1950-sekarang</div>
+              <div class="timeline-content">
+                  <h3>Pasca Kemerdekaan</h3>
+                  <p>
+                      Setelah merdeka, Jember berkembang pesat di sektor pendidikan,
+                      pariwisata, dan industri kreatif, sambil tetap fokus pada
+                      pertanian sebagai salah satu sektor utama.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </section>
+    <!-- <div class="container mt-5">
+      <h1 class="d-flex justify-content-center mb-3">Walk Through History</h1>
+      <div class="row d-flex align-items-center mb-3 border">
+        <div class="col-12 col-md-6">
+          <img src="jfc.jpeg" alt="" class="img-fluid" />
+        </div>
+        <div class="col-12 col-md-6">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Exercitationem tempore pariatur, sequi esse alias, voluptates iure
+            ad incidunt cum reiciendis consequatur a eum. Eos, atque, vel volup
+            tatem nemo deserunt soluta a aspernatur dolorem aperiam, optio
+            perferendis natus dignissimos quia fugiat laboriosam ullam dicta?
+            Omnis quia accusantium fuga odio eum natus sed nisi cupiditate
+            cumque incidunt! Necessitatibus qui possimus distinctio eos, ad
+            minima tempora non aperiam officia! Tempora blanditiis,
+            consequuntur, similique cupiditate quas dolores ratione fuga
+            repudiandae, quaerat sed delectus. Autem assumenda tempore doloribus
+            impedit veritatis, ipsam exercitationem sed odio magni voluptatibus
+            iure nam commodi, obcaecati aperiam. Doloremque totam facere
+            deleniti.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+      </div>
+
+      <div class="row d-flex align-items-center mb-3 border">
+        <div class="col-12 col-md-6">
+          <img src="jfc.jpeg" alt="" class="img-fluid" style="width: 75%;"/>
+        </div>
+        <div class="col-12 col-md-6">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Exercitationem tempore pariatur, sequi esse alias, voluptates iure
+            ad incidunt cum reiciendis consequatur a eum. Eos, atque, vel volup
+            tatem nemo deserunt soluta a aspernatur dolorem aperiam, optio
+            perferendis natus dignissimos quia fugiat laboriosam ullam dicta?
+            Omnis quia accusantium fuga odio eum natus sed nisi cupiditate
+            cumque incidunt! Necessitatibus qui possimus distinctio eos, ad
+            minima tempora non aperiam officia! Tempora blanditiis,
+            consequuntur, similique cupiditate quas dolores ratione fuga
+            repudiandae, quaerat sed delectus. Autem assumenda tempore doloribus
+            impedit veritatis, ipsam exercitationem sed odio magni voluptatibus
+            iure nam commodi, obcaecati aperiam. Doloremque totam facere
+            deleniti.
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+    <script src="main.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous">
+    
+    
+    </script>
+  </body>
+</html>
