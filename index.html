@@ -13,88 +13,122 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
       * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
       body {
-          font-family: "Poppins", sans-serif;
+        font-family: "Poppins", sans-serif;
+        /* background-color: #24292d; */
+        background-color: black;
       }
 
       .timeline-section {
-          background-color: #24292d;
-          min-height: 100vh;
-          padding: 100px 15px;
+        min-height: 100vh;
+        padding: 100px 15px;
       }
       .timeline-items {
-          max-width: 1000px;
-          margin: auto;
-          display: flex;
-          flex-wrap: wrap;
-          position: relative;
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
       }
       .timeline-items::before {
-          content: "";
-          position: absolute;
-          width: 2px;
-          height: 100%;
-          background-color: rgba(47, 54, 62, 1); /* Garis tetap cerah */
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 92rem;
+        background-color: rgba(47, 54, 62, 1); /* Garis tetap cerah */
       }
       .timeline-item {
-          margin-bottom: 40px;
-          width: 100%;
-          position: relative;
-          padding-left: 50px; /* Jarak untuk konten */
-          text-align: left;
+        margin-bottom: 40px;
+        width: 100%;
+        position: relative;
+        padding-left: 50px; /* Jarak untuk konten */
+        text-align: left;
       }
       .timeline-dot {
-          height: 16px;
-          width: 16px;
-          background-color: rgba(234, 160, 35, 0.5); /* Warna dot redup */
-          position: absolute;
-          left: -8px; /* Dot di kiri */
-          border-radius: 50%;
-          top: 10px;
-          transition: background-color 0.3s ease; /* Transisi untuk warna dot */
+        height: 16px;
+        width: 16px;
+        background-color: rgba(234, 160, 35, 0.5); /* Warna dot redup */
+        position: absolute;
+        left: -8px; /* Dot di kiri */
+        border-radius: 50%;
+        top: 10px;
+        transition: background-color 0.3s ease; /* Transisi untuk warna dot */
       }
       .timeline-date {
-          font-size: 18px;
-          color: rgba(234, 160, 35, 0.5); /* Warna teks redup */
-          margin: 6px 0 15px;
+        font-size: 18px;
+        color: rgba(234, 160, 35, 0.5); /* Warna teks redup */
+        margin: 6px 0 15px;
       }
       .timeline-content {
-          background-color: #2f363e;
-          padding: 30px;
-          border-radius: 5px;
-          transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk warna */
+        background-color: #2f363e;
+        padding: 30px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk warna */
       }
       .timeline-content h3 {
-          font-size: 20px;
-          color: rgba(255, 255, 255, 0.5); /* Warna teks redup */
-          margin: 0 0 10px;
-          text-transform: capitalize;
-          font-weight: 500;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.5); /* Warna teks redup */
+        margin: 0 0 10px;
+        text-transform: capitalize;
+        font-weight: 500;
       }
       .timeline-content p {
-          color: rgba(200, 200, 200, 0.5); /* Warna teks redup */
-          font-size: 16px;
-          font-weight: 300;
-          line-height: 22px;
+        color: rgba(200, 200, 200, 0.5); /* Warna teks redup */
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 22px;
       }
       .highlight {
-          background-color: #4e555d; /* Ganti dengan warna yang diinginkan */
-          color: #ffffff; /* Warna teks menyala */
+        background-color: #4e555d; /* Ganti dengan warna yang diinginkan */
+        color: #ffffff; /* Warna teks menyala */
       }
       /* responsive */
       @media (max-width: 767px) {
-          .timeline-items::before {
-              left: 7px;
-          }
-          .timeline-dot {
-              left: 0;
-          }
+        .timeline-items::before {
+          left: 7px;
+        }
+        .timeline-dot {
+          left: 0;
+        }
       }
-  </style>
+
+      .divider {
+        content: "";
+        width: 100%;
+        height: 5px;
+        background-color: red;
+        border-radius: 10px;
+      }
+
+      .carousel {
+        height: 900px;
+        perspective: 800px;
+        margin-top: -310px;
+      }
+      .carousel .carousel-item {
+        width: 280px;
+        cursor: pointer;
+      }
+      .slide {
+        width: 100%;
+        border-radius: 50px 50px 50px 50px;
+      }
+      .carousel .carousel-item h3 {
+        margin: 0;
+        margin-top: -100px;
+        font-weight: bold;
+        background: #fff;
+        padding: 100px 5px;
+        color: #000;
+        font-size: 2em;
+        box-sizing: border-box;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <nav
@@ -149,96 +183,137 @@
       <img src="jfc.jpeg" alt="test" class="img-fluid" />
     </header>
 
-    <h1 class="my-5 d-flex justify-content-center">Walk Through History</h1>
+    <div class="d-flex justify-content-center">
+      <h1 class="mt-5 text-light">
+        Carousel
+        <hr class="divider" />
+      </h1>
+    </div>
+
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="images/bg1.jpg" class="slide" />
+        <h3>REOG JEMBER</h3>
+        <div class="social"></div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/bg2.jpeg" class="slide" />
+        <h3>JFC</h3>
+        <div class="social"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/bg3.jpg" class="slide" />
+        <h3>TARI LAHBAKO</h3>
+        <div class="social"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/bg4.jpg" class="slide" />
+        <h3>MUSIK PATROL</h3>
+        <div class="social"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/bg5.jpg" class="slide" />
+        <h3>BATIK JEMBER</h3>
+        <div class="social"></div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <h1 class="mt-5 text-light">
+        Walk Through History
+        <hr class="divider" />
+      </h1>
+    </div>
 
     <section class="timeline-section">
       <div class="timeline-items">
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">SEBELUM KOLONIAL</div>
-              <div class="timeline-content">
-                  <h3>Majapahit</h3>
-                  <p>
-                      Jember merupakan bagian dari Kerajaan Majapahit dan Kesultanan
-                      Mataram, dengan kehidupan masyarakat yang berfokus pada pertanian
-                      subsisten dan budaya lokal.
-                  </p>
-              </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">SEBELUM KOLONIAL</div>
+          <div class="timeline-content">
+            <h3>Majapahit</h3>
+            <p>
+              Jember merupakan bagian dari Kerajaan Majapahit dan Kesultanan
+              Mataram, dengan kehidupan masyarakat yang berfokus pada pertanian
+              subsisten dan budaya lokal.
+            </p>
           </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">ABAD KE 18</div>
-              <div class="timeline-content">
-                  <h3>ERA VOC</h3>
-                  <p>
-                      VOC mulai mengeksplorasi Jember karena potensi agrarisnya.
-                      Interaksi dengan pedagang Eropa membawa pengaruh baru dalam
-                      ekonomi dan pertanian.
-                  </p>
-              </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">ABAD KE 18</div>
+          <div class="timeline-content">
+            <h3>ERA VOC</h3>
+            <p>
+              VOC mulai mengeksplorasi Jember karena potensi agrarisnya.
+              Interaksi dengan pedagang Eropa membawa pengaruh baru dalam
+              ekonomi dan pertanian.
+            </p>
           </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">1859-1890</div>
-              <div class="timeline-content">
-                  <h3>Pertumbuhan Perkebunan</h3>
-                  <p>
-                      Sejak 1859, Jember dikenal sebagai daerah penghasil kopi, dengan
-                      Belanda membuka lahan perkebunan yang menarik banyak imigran untuk
-                      bekerja.
-                  </p>
-              </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">1859-1890</div>
+          <div class="timeline-content">
+            <h3>Pertumbuhan Perkebunan</h3>
+            <p>
+              Sejak 1859, Jember dikenal sebagai daerah penghasil kopi, dengan
+              Belanda membuka lahan perkebunan yang menarik banyak imigran untuk
+              bekerja.
+            </p>
           </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">1890</div>
-              <div class="timeline-content">
-                  <h3>Pertumbuhan Tembakau</h3>
-                  <p>
-                      Pada tahun 1890, Jember menjadi daerah produksi utama tembakau,
-                      terutama jenis Besuki Na-Oogst, yang diekspor ke Eropa dan
-                      meningkatkan pendapatan daerah.
-                  </p>
-              </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">1890</div>
+          <div class="timeline-content">
+            <h3>Pertumbuhan Tembakau</h3>
+            <p>
+              Pada tahun 1890, Jember menjadi daerah produksi utama tembakau,
+              terutama jenis Besuki Na-Oogst, yang diekspor ke Eropa dan
+              meningkatkan pendapatan daerah.
+            </p>
           </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">ABAD Ke-20</div>
-              <div class="timeline-content">
-                  <h3>Perkembangan Infrastruktur</h3>
-                  <p>
-                      Pembangunan infrastruktur seperti jalan dan rel kereta api dimulai
-                      untuk mendukung pertumbuhan ekonomi dan meningkatkan
-                      aksesibilitas.
-                  </p>
-              </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">ABAD Ke-20</div>
+          <div class="timeline-content">
+            <h3>Perkembangan Infrastruktur</h3>
+            <p>
+              Pembangunan infrastruktur seperti jalan dan rel kereta api dimulai
+              untuk mendukung pertumbuhan ekonomi dan meningkatkan
+              aksesibilitas.
+            </p>
           </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">1945-1949</div>
-              <div class="timeline-content">
-                  <h3>Perang Kemerdekaan</h3>
-                  <p>
-                      Jember menjadi pusat pertempuran antara pejuang kemerdekaan dan
-                      pasukan kolonial Belanda, berkontribusi pada perjuangan untuk
-                      kemerdekaan Indonesia.
-                  </p>
-              </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">1945-1949</div>
+          <div class="timeline-content">
+            <h3>Perang Kemerdekaan</h3>
+            <p>
+              Jember menjadi pusat pertempuran antara pejuang kemerdekaan dan
+              pasukan kolonial Belanda, berkontribusi pada perjuangan untuk
+              kemerdekaan Indonesia.
+            </p>
           </div>
-          <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">1950-sekarang</div>
-              <div class="timeline-content">
-                  <h3>Pasca Kemerdekaan</h3>
-                  <p>
-                      Setelah merdeka, Jember berkembang pesat di sektor pendidikan,
-                      pariwisata, dan industri kreatif, sambil tetap fokus pada
-                      pertanian sebagai salah satu sektor utama.
-                  </p>
-              </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">1950-sekarang</div>
+          <div class="timeline-content">
+            <h3>Pasca Kemerdekaan</h3>
+            <p>
+              Setelah merdeka, Jember berkembang pesat di sektor pendidikan,
+              pariwisata, dan industri kreatif, sambil tetap fokus pada
+              pertanian sebagai salah satu sektor utama.
+            </p>
           </div>
+        </div>
       </div>
-  </section>
+    </section>
     <!-- <div class="container mt-5">
       <h1 class="d-flex justify-content-center mb-3">Walk Through History</h1>
       <div class="row d-flex align-items-center mb-3 border">
@@ -297,9 +372,7 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous">
-    
-    
-    </script>
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
